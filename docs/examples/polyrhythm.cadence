@@ -1,0 +1,18 @@
+# Polyrhythmic Composition
+# Demonstrates complex rhythmic patterns and multiple visualizers
+
+# Create euclidean rhythms (if we had that function)
+# For now, using offset patterns to create polyrhythm
+kick_pattern = kick(every: 3) |> visualize(:rhythm)
+
+snare_pattern = snare(every: 5, offset: 2) |> visualize(:rhythm)
+
+hihat_pattern = hihat(times: 16) |> visualize(:rhythm)
+
+# Layer the polyrhythms
+polyrhythm = kick_pattern + snare_pattern + hihat_pattern
+polyrhythm |> visualize(:spectrum) |> visualize(:waveform)
+
+# Add some processing effects
+final_track = polyrhythm |> reverb(room: 0.4)
+final_track |> visualize(:spectrum)

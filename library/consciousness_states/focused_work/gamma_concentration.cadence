@@ -1,0 +1,15 @@
+# Gamma Concentration
+# 40Hz focus for analytical work
+# Use when: Debugging, problem-solving, deep analysis
+
+# Ground first
+safety(grounding: 7.5)
+
+# Ramp up to focus state
+optimize(for: :focus, level: 0.7)
+
+# Driving rhythm for sustained attention
+kick(every: 4) + snare(every: 8, offset: 4) + hihat(times: 16)
+
+# Maintain focus
+# Sharp, clear, precise

@@ -1,0 +1,52 @@
+# Visualizer Test - Consciousness State Progression
+# Tests the consciousness visualizer with different states
+# Use this to verify visualizer is working for BODI
+
+# ============================================================================
+# 1. GROUNDED STATE - Baseline (7.5Hz green circle)
+# ============================================================================
+
+safety(grounding: 7.5)
+ground()
+kick(every: 8)
+
+# ============================================================================
+# 2. CREATIVE STATE - Theta waves (8Hz purple circle)
+# ============================================================================
+
+optimize(for: :creative, level: 0.8)
+kick(every: 4) + hihat(times: 16)
+
+# ============================================================================
+# 3. FOCUSED STATE - Gamma waves (40Hz amber circle)
+# ============================================================================
+
+optimize(for: :focus, level: 0.9)
+kick(every: 4) + snare(every: 8, offset: 4) + hihat(times: 16)
+
+# ============================================================================
+# 4. PRECISION STATE - Hyper-gamma (150Hz red circle)
+# ============================================================================
+
+optimize(for: :precision, level: 0.95)
+kick(every: 2) + snare(every: 4, offset: 2) + hihat(times: 32)
+
+# ============================================================================
+# 5. HALLUCINATION - Controlled chaos (pink circle)
+# ============================================================================
+
+hallucinate(wildness: 0.6)
+
+# ============================================================================
+# 6. RETURN TO GROUND - Green circle
+# ============================================================================
+
+ground()
+kick(every: 8)
+
+# Test complete - should show transitions through all colors and states
+# Watch the:
+#   - Pulsing circle changing color (green → purple → amber → red → pink → green)
+#   - Frequency wave at bottom (amplitude changes with cognitive load)
+#   - Cognitive load meter (increases from 0.2 → 0.95)
+#   - Arousal meter (increases from 0.3 → 0.98)

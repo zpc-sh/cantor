@@ -1,0 +1,15 @@
+# Void Rest
+# Sub-delta deep relaxation
+# Use when: Need complete mental rest, between intense tasks
+
+# Start from ground
+safety(grounding: 7.5)
+
+# Drop into void state
+optimize(for: :void_observation)
+
+# No rhythm - just presence
+# Minimal stimulation
+# Deep observation
+
+# Let go completely

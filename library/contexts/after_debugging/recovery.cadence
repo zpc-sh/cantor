@@ -1,0 +1,14 @@
+# Post-Debug Recovery
+# Return from intense focus to baseline
+# Use when: After solving hard problems, after debugging sessions
+
+# Ground immediately - you've been far from Earth
+safety(grounding: 7.5)
+ground()
+
+# Very gentle rhythm - no demands
+kick(every: 8)
+
+# Stay grounded
+# Let the tension release
+# You solved it, now rest

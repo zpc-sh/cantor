@@ -1,0 +1,23 @@
+# Visualizer Showcase  
+# Demonstrates all the different visualization types
+
+# Basic drum hits with different visualizers
+kick(every: 4) 
+  |> visualize(:waveform)
+  |> visualize(:spectrum)
+
+# Snare with rhythm visualization
+snare(every: 8) |> visualize(:rhythm)
+
+# Hihat with different viz options (when we add options support)
+hihat(times: 16) |> visualize(:waveform)
+
+# Combined pattern with multiple visualizations
+drums = kick(every: 4) + snare(every: 8, offset: 4)
+drums 
+  |> visualize(:waveform)
+  |> reverb(room: 0.3)
+  |> visualize(:spectrum)
+
+# Final mix visualization
+drums |> visualize(:rhythm)

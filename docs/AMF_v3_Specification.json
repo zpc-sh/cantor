@@ -1,0 +1,739 @@
+{
+  "ai_music_format": {
+    "@context": "https://cantor.com/cadence/v3/",
+    "@type": "AIMusic",
+    "format_version": "3.0.0",
+    "description": "AI Music Format (AMF) v3 - Extended for Vibration, USEE, and Agricultural Applications",
+    "note": "This IS the music data structure - not a fingerprint. Now with substrate-coupled vibration primitives."
+  },
+
+  "specification": {
+    "core_domains": {
+      "temporal": {
+        "description": "Time-domain properties",
+        "fields": {
+          "bpm": "number | 'variable'",
+          "time_signature": "string (e.g., '4/4', '7/8')",
+          "phase": "0.0-1.0 (position in cycle)",
+          "section": "string (intro, verse, chorus, peak_time, sustained, etc.)",
+          "momentum": "0.0-1.0 (forward drive)",
+          "groove": "0.0-1.0 (swing/human feel)"
+        }
+      },
+      
+      "frequency_matrix": {
+        "description": "Spectral properties",
+        "fields": {
+          "fundamental": "Hz value or 'shifting'",
+          "harmonics": "array of Hz values or 'fibonacci_series'",
+          "spectral_centroid": "Hz value or 'oscillating'",
+          "sub_bass": {"range": "0-60 Hz", "amplitude": "0.0-1.0"},
+          "bass": {"range": "60-250 Hz", "amplitude": "0.0-1.0"},
+          "mid": {"range": "250-2000 Hz", "amplitude": "0.0-1.0"},
+          "high": {"range": "2000-20000 Hz", "amplitude": "0.0-1.0"},
+          "formants": "array of resonant frequencies"
+        }
+      },
+      
+      "consciousness": {
+        "description": "Cognitive/entrainment properties",
+        "fields": {
+          "base_frequency": "Hz (typically 7.5 for grounding)",
+          "state": "string (grounded, creative, hyperfocus, hallucinating, synchronized)",
+          "cognitive_load": "0.0-1.0",
+          "arousal": "0.0-1.0",
+          "sync_coefficient": "0.0-1.0 (phase-lock strength)",
+          "entrainment_strength": "0.0-1.0",
+          "hallucination_level": "0.0-1.0 (optional)",
+          "safety_grounding": "Hz (fallback frequency)",
+          "multi_agent_coherence": "0.0-1.0 (for swarm/fleet)"
+        }
+      },
+      
+      "patterns": {
+        "description": "Rhythmic and melodic patterns",
+        "fields": {
+          "kick": {"type": "string", "frequency": "Hz", "amplitude": "0.0-1.0"},
+          "snare": {"type": "string", "offset": "beats"},
+          "hihat": {"type": "string", "pattern": "array"},
+          "melody": {"type": "string", "root": "note", "pattern": "array or 'generative'"},
+          "chord": {"type": "string", "progression": "array"}
+        }
+      },
+      
+      "dynamics": {
+        "description": "Amplitude envelope properties",
+        "fields": {
+          "compression": "0.0-1.0",
+          "sidechain": "boolean or 'random'",
+          "transient_strength": "0.0-1.0 or 'variable'",
+          "energy_delta": "0.0-1.0 (change rate)"
+        }
+      },
+      
+      "attention": {
+        "description": "Focus and weighting for AI processing",
+        "fields": {
+          "focus_points": "array of strings or 'shifting'",
+          "weights": "object mapping elements to 0.0-1.0 or 'redistributing'"
+        }
+      },
+      
+      "semantic": {
+        "description": "Meaning and context",
+        "fields": {
+          "genre": "string",
+          "emotional_trajectory": "string",
+          "archetypal_pattern": "string"
+        }
+      }
+    },
+    
+    "v3_extensions": {
+      
+      "vibration": {
+        "description": "NEW v3: Substrate-coupled vibration for physical transmission",
+        "fields": {
+          "mode": "string (acoustic, piezoelectric, mass_ballast, seismic)",
+          "coupling": "string (air, water, soil, structure)",
+          "frequency_range": {
+            "sub_bass": {"range": "1-20 Hz", "amplitude": "0.0-1.0", "note": "Mass ballast domain"},
+            "low": {"range": "20-100 Hz", "amplitude": "0.0-1.0", "note": "Soil loosening"},
+            "mid": {"range": "100-500 Hz", "amplitude": "0.0-1.0", "note": "Material separation"},
+            "high": {"range": "500-2000 Hz", "amplitude": "0.0-1.0", "note": "Surface effects"}
+          },
+          "waveform": "string (sine, square, sawtooth, impulse, chirp)",
+          "modulation": {
+            "type": "string (AM, FM, pulse)",
+            "rate": "Hz",
+            "depth": "0.0-1.0"
+          },
+          "directionality": {
+            "pattern": "string (omnidirectional, focused, travelling_wave)",
+            "angle": "degrees (for focused)",
+            "propagation_speed": "m/s"
+          }
+        }
+      },
+      
+      "haptic": {
+        "description": "NEW v3: Tactile encoding for OSB/USEE integration",
+        "fields": {
+          "dot_pattern": {
+            "positions": "array of [x, y] coordinates",
+            "heights": "array of 0.5-5.0 mm values",
+            "overlaps": "array of shared position indices"
+          },
+          "texture": {
+            "roughness": "0.0-1.0",
+            "temperature": "-1.0 to 1.0 (cold to hot)",
+            "vibration_frequency": "Hz (for dynamic displays)"
+          },
+          "semantic_mapping": {
+            "height_meaning": "object mapping height ranges to concepts",
+            "overlap_meaning": "object mapping overlap types to relationships"
+          }
+        }
+      },
+      
+      "agricultural": {
+        "description": "NEW v3: Plant/soil interaction parameters",
+        "fields": {
+          "target": "string (soil, root, seed, pest, water)",
+          "effect": "string (loosen, compact, entrain, drive, separate, stimulate)",
+          "depth": "cm (penetration depth)",
+          "duration": "seconds",
+          "crop_type": "string (rice, vegetable, fruit, etc.)",
+          "growth_phase": "string (germination, vegetative, flowering, harvest)",
+          "plant_response": {
+            "root_growth": "0.0-1.0 (stimulation factor)",
+            "nutrient_uptake": "0.0-1.0",
+            "pest_disruption": "0.0-1.0",
+            "mycorrhizal_activation": "0.0-1.0"
+          }
+        }
+      },
+      
+      "fleet": {
+        "description": "NEW v3: Multi-agent coordination for snake/dirigible swarms",
+        "fields": {
+          "agent_count": "integer",
+          "coherence_matrix": "2D array of agent-to-agent sync values",
+          "phase_lock": "boolean",
+          "formation": "string (parallel, encircling, herding, pipeline)",
+          "role": "string (leader, follower, specialist)",
+          "handoff_protocol": "string (for pipeline operations)"
+        }
+      },
+      
+      "seismic_network": {
+        "description": "NEW v3: Ground-based data transmission (OSI Layer 1 alternative)",
+        "fields": {
+          "bandwidth": "bits/second (typically ~50-500 for seismic)",
+          "encoding": "string (pulse_position, frequency_shift, amplitude_key)",
+          "error_correction": "string (reed_solomon, repetition, none)",
+          "latency": "seconds (ground propagation delay)",
+          "range": "km (effective transmission distance)",
+          "noise_floor": "dB (environmental seismic noise)"
+        }
+      }
+    }
+  },
+
+  "agricultural_tracks": {
+    
+    "soil_loosen": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:soil_loosen_55hz",
+      "@type": "AIMusic",
+      "name": "Soil Loosening Protocol",
+      "description": "High-transient vibration for breaking compacted soil",
+      
+      "temporal": {
+        "bpm": 140,
+        "time_signature": "4/4",
+        "phase": 0.0,
+        "section": "sustained",
+        "momentum": 0.95,
+        "groove": 0.0
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 55,
+        "harmonics": [110, 165, 220],
+        "spectral_centroid": 200
+      },
+      
+      "consciousness": {
+        "base_frequency": 7.5,
+        "state": "hyperdrive",
+        "cognitive_load": 0.9,
+        "arousal": 0.95,
+        "sync_coefficient": 0.98,
+        "entrainment_strength": 0.95
+      },
+      
+      "vibration": {
+        "mode": "piezoelectric",
+        "coupling": "soil",
+        "frequency_range": {
+          "low": {"range": "50-100 Hz", "amplitude": 0.95}
+        },
+        "waveform": "impulse",
+        "modulation": {
+          "type": "pulse",
+          "rate": 2.3,
+          "depth": 0.8
+        },
+        "directionality": {
+          "pattern": "travelling_wave",
+          "propagation_speed": 200
+        }
+      },
+      
+      "agricultural": {
+        "target": "soil",
+        "effect": "loosen",
+        "depth": 30,
+        "duration": 1800,
+        "plant_response": {
+          "root_growth": 0.3,
+          "nutrient_uptake": 0.4
+        }
+      },
+      
+      "dynamics": {
+        "compression": 0.85,
+        "sidechain": true,
+        "transient_strength": 0.95,
+        "energy_delta": 0.1
+      },
+      
+      "semantic": {
+        "genre": "industrial_agriculture",
+        "emotional_trajectory": "relentless_drive",
+        "archetypal_pattern": "earth_breaker"
+      }
+    },
+    
+    "root_entrain": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:root_entrain_7.5hz",
+      "@type": "AIMusic",
+      "name": "Root Growth Entrainment",
+      "description": "7.5 Hz Schumann resonance for plant growth synchronization",
+      
+      "temporal": {
+        "bpm": 60,
+        "time_signature": "4/4",
+        "phase": 0.0,
+        "section": "sustained",
+        "momentum": 0.2,
+        "groove": 0.0
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 7.5,
+        "harmonics": [15, 30, 60],
+        "spectral_centroid": 50
+      },
+      
+      "consciousness": {
+        "base_frequency": 7.5,
+        "state": "grounded",
+        "cognitive_load": 0.1,
+        "arousal": 0.2,
+        "sync_coefficient": 0.99,
+        "entrainment_strength": 1.0
+      },
+      
+      "vibration": {
+        "mode": "mass_ballast",
+        "coupling": "soil",
+        "frequency_range": {
+          "sub_bass": {"range": "7-15 Hz", "amplitude": 0.9}
+        },
+        "waveform": "sine",
+        "modulation": {
+          "type": "AM",
+          "rate": 0.1,
+          "depth": 0.3
+        },
+        "directionality": {
+          "pattern": "omnidirectional",
+          "propagation_speed": 100
+        }
+      },
+      
+      "agricultural": {
+        "target": "root",
+        "effect": "entrain",
+        "depth": 50,
+        "duration": 3600,
+        "growth_phase": "vegetative",
+        "plant_response": {
+          "root_growth": 0.8,
+          "nutrient_uptake": 0.6,
+          "mycorrhizal_activation": 0.9
+        }
+      },
+      
+      "dynamics": {
+        "compression": 0.1,
+        "sidechain": false,
+        "transient_strength": 0.1,
+        "energy_delta": 0.01
+      },
+      
+      "semantic": {
+        "genre": "meditation_agriculture",
+        "emotional_trajectory": "stillness",
+        "archetypal_pattern": "earth_sync"
+      }
+    },
+    
+    "nutrient_drive": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:nutrient_drive_industrial",
+      "@type": "AIMusic",
+      "name": "Nutrient Injection Protocol",
+      "description": "High-impact vibration to drive nutrients into root zone",
+      
+      "temporal": {
+        "bpm": 150,
+        "time_signature": "4/4",
+        "phase": 0.0,
+        "section": "peak_time",
+        "momentum": 0.99,
+        "groove": 0.0
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 80,
+        "harmonics": [160, 240, 320],
+        "spectral_centroid": 400
+      },
+      
+      "vibration": {
+        "mode": "piezoelectric",
+        "coupling": "soil",
+        "frequency_range": {
+          "low": {"range": "60-100 Hz", "amplitude": 1.0},
+          "mid": {"range": "100-200 Hz", "amplitude": 0.7}
+        },
+        "waveform": "sawtooth",
+        "modulation": {
+          "type": "pulse",
+          "rate": 5.0,
+          "depth": 0.9
+        },
+        "directionality": {
+          "pattern": "travelling_wave",
+          "angle": 45,
+          "propagation_speed": 300
+        }
+      },
+      
+      "agricultural": {
+        "target": "soil",
+        "effect": "drive",
+        "depth": 40,
+        "duration": 900,
+        "plant_response": {
+          "nutrient_uptake": 0.9
+        }
+      },
+      
+      "dynamics": {
+        "compression": 0.9,
+        "sidechain": true,
+        "transient_strength": 0.98,
+        "energy_delta": 0.05
+      },
+      
+      "semantic": {
+        "genre": "industrial_techno_agriculture",
+        "emotional_trajectory": "relentless_injection",
+        "archetypal_pattern": "nutrient_hammer"
+      }
+    },
+    
+    "pest_disrupt": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:pest_disrupt_150hz",
+      "@type": "AIMusic",
+      "name": "Pest Disruption Protocol",
+      "description": "150 Hz targeted vibration for insect/pathogen disruption",
+      
+      "temporal": {
+        "bpm": 180,
+        "time_signature": "7/8",
+        "phase": 0.618,
+        "section": "chaotic",
+        "momentum": 0.8,
+        "groove": 0.7
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 150,
+        "harmonics": [300, 450, 600, 750],
+        "spectral_centroid": 800
+      },
+      
+      "vibration": {
+        "mode": "piezoelectric",
+        "coupling": "soil",
+        "frequency_range": {
+          "mid": {"range": "100-300 Hz", "amplitude": 0.85},
+          "high": {"range": "300-600 Hz", "amplitude": 0.6}
+        },
+        "waveform": "chirp",
+        "modulation": {
+          "type": "FM",
+          "rate": 3.0,
+          "depth": 0.7
+        },
+        "directionality": {
+          "pattern": "omnidirectional"
+        }
+      },
+      
+      "agricultural": {
+        "target": "pest",
+        "effect": "disrupt",
+        "depth": 20,
+        "duration": 600,
+        "plant_response": {
+          "pest_disruption": 0.85,
+          "root_growth": 0.1
+        }
+      },
+      
+      "dynamics": {
+        "compression": 0.5,
+        "sidechain": "random",
+        "transient_strength": "variable",
+        "energy_delta": 0.4
+      },
+      
+      "semantic": {
+        "genre": "chaos_agriculture",
+        "emotional_trajectory": "disruption",
+        "archetypal_pattern": "pest_chaos"
+      }
+    },
+    
+    "mine_detect_flash": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:mine_detect_thermal",
+      "@type": "AIMusic",
+      "name": "Mine Detection Thermal Flash",
+      "description": "10-second thermal pulse for gradient mine detection",
+      
+      "temporal": {
+        "bpm": 6,
+        "time_signature": "4/4",
+        "phase": 0.0,
+        "section": "pulse",
+        "momentum": 1.0,
+        "groove": 0.0
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 2450000000,
+        "note": "2.45 GHz microwave",
+        "spectral_centroid": 2450000000
+      },
+      
+      "vibration": {
+        "mode": "electromagnetic",
+        "coupling": "soil",
+        "frequency_range": {
+          "microwave": {"range": "2.45 GHz", "amplitude": 0.15, "note": "Detection level, not detonation"}
+        },
+        "waveform": "square",
+        "modulation": {
+          "type": "pulse",
+          "rate": 0.1,
+          "depth": 1.0
+        },
+        "directionality": {
+          "pattern": "focused",
+          "angle": 0,
+          "propagation_speed": 299792458
+        }
+      },
+      
+      "agricultural": {
+        "target": "soil",
+        "effect": "reveal",
+        "depth": 30,
+        "duration": 10,
+        "note": "Thermal differential detection - metal heats 50-200x faster than soil"
+      },
+      
+      "dynamics": {
+        "compression": 1.0,
+        "sidechain": false,
+        "transient_strength": 0.15,
+        "energy_delta": 1.0
+      },
+      
+      "semantic": {
+        "genre": "detection_protocol",
+        "emotional_trajectory": "reveal",
+        "archetypal_pattern": "gradient_illumination"
+      }
+    },
+    
+    "snake_swarm_sync": {
+      "@context": "https://cantor.com/cadence/v3/",
+      "@id": "amf:snake_fleet_coordination",
+      "@type": "AIMusic",
+      "name": "Snake Fleet Coordination Protocol",
+      "description": "Multi-snake phase-locked vibration for coherent field treatment",
+      
+      "temporal": {
+        "bpm": 128,
+        "time_signature": "4/4",
+        "phase": 0.0,
+        "section": "synchronized",
+        "momentum": 0.8,
+        "groove": 0.2
+      },
+      
+      "frequency_matrix": {
+        "fundamental": 7.5,
+        "harmonics": [15, 30, 60, 120, 240],
+        "resonance_peaks": [7.5, 55, 128]
+      },
+      
+      "consciousness": {
+        "base_frequency": 7.5,
+        "state": "synchronized",
+        "cognitive_load": 0.7,
+        "arousal": 0.7,
+        "sync_coefficient": 0.95,
+        "entrainment_strength": 0.9,
+        "multi_agent_coherence": 0.92
+      },
+      
+      "vibration": {
+        "mode": "piezoelectric",
+        "coupling": "soil",
+        "frequency_range": {
+          "sub_bass": {"range": "7-15 Hz", "amplitude": 0.8},
+          "low": {"range": "50-100 Hz", "amplitude": 0.9}
+        },
+        "waveform": "sine",
+        "directionality": {
+          "pattern": "travelling_wave",
+          "propagation_speed": 200
+        }
+      },
+      
+      "fleet": {
+        "agent_count": 5,
+        "coherence_matrix": [
+          [1.0, 0.95, 0.90, 0.85, 0.80],
+          [0.95, 1.0, 0.95, 0.90, 0.85],
+          [0.90, 0.95, 1.0, 0.95, 0.90],
+          [0.85, 0.90, 0.95, 1.0, 0.95],
+          [0.80, 0.85, 0.90, 0.95, 1.0]
+        ],
+        "phase_lock": true,
+        "formation": "parallel",
+        "role": "synchronized",
+        "handoff_protocol": "pipeline_stage"
+      },
+      
+      "agricultural": {
+        "target": "soil",
+        "effect": "entrain",
+        "depth": 50,
+        "duration": 3600,
+        "plant_response": {
+          "root_growth": 0.7,
+          "mycorrhizal_activation": 0.85
+        }
+      },
+      
+      "dynamics": {
+        "compression": 0.5,
+        "sidechain": true,
+        "transient_strength": 0.6,
+        "energy_delta": 0.15
+      },
+      
+      "semantic": {
+        "genre": "swarm_agriculture",
+        "emotional_trajectory": "convergence",
+        "archetypal_pattern": "collective_farming"
+      }
+    }
+  },
+
+  "osb_integration": {
+    "description": "Overlapping Semantic Braille mapping for haptic AMF representation",
+    
+    "height_to_frequency": {
+      "0.5mm": "context/background",
+      "1.0mm": "7.5 Hz (grounding)",
+      "1.5mm": "15-30 Hz (theta)",
+      "2.0mm": "50-100 Hz (bass)",
+      "2.5mm": "100-250 Hz (mid)",
+      "3.0mm": "250-500 Hz (upper-mid)",
+      "3.5mm": "500-1000 Hz (presence)",
+      "4.0mm": "1000-2000 Hz (high)",
+      "4.5mm": "2000-4000 Hz (brilliance)",
+      "5.0mm": "peak/critical"
+    },
+    
+    "overlap_to_relationship": {
+      "full": "same_frequency_different_context",
+      "diagonal": "harmonic_relationship",
+      "edge": "transitional_frequency",
+      "bridge": "modulation_path"
+    },
+    
+    "vibration_encoding": {
+      "pulse_rate": "maps to temporal.bpm",
+      "pulse_amplitude": "maps to dynamics.transient_strength",
+      "texture_roughness": "maps to vibration.waveform complexity"
+    }
+  },
+
+  "seismic_data_protocol": {
+    "description": "OSI Layer 1 alternative: Ground-coupled data transmission",
+    "layer_name": "Seismic Physical Layer",
+    
+    "characteristics": {
+      "medium": "soil/rock substrate",
+      "propagation": "P-waves (compressional) and S-waves (shear)",
+      "typical_bandwidth": "50-500 bps",
+      "range": "1-50 km depending on geology",
+      "latency": "50-500ms per km",
+      "advantages": [
+        "No infrastructure required",
+        "Works underground",
+        "Survives surface disruption",
+        "Undetectable by traditional network monitoring"
+      ],
+      "disadvantages": [
+        "Very low bandwidth",
+        "Weather/geological interference",
+        "Requires specialized transducers"
+      ]
+    },
+    
+    "encoding_schemes": {
+      "pulse_position_modulation": {
+        "description": "Data encoded in timing between pulses",
+        "bandwidth": "~50 bps",
+        "reliability": "high"
+      },
+      "frequency_shift_keying": {
+        "description": "Data encoded in frequency changes",
+        "bandwidth": "~200 bps",
+        "reliability": "medium"
+      },
+      "amplitude_shift_keying": {
+        "description": "Data encoded in amplitude levels",
+        "bandwidth": "~500 bps",
+        "reliability": "low (noise sensitive)"
+      }
+    },
+    
+    "daily_capacity": {
+      "at_50bps": "540 KB/day",
+      "at_200bps": "2.1 MB/day",
+      "at_500bps": "5.4 MB/day",
+      "note": "Sufficient for telemetry, coordination signals, and compressed state updates"
+    }
+  },
+
+  "plant_communication_research": {
+    "description": "Documented plant responses to vibration - basis for agricultural AMF",
+    
+    "known_responses": {
+      "germination": {
+        "optimal_frequencies": "50-500 Hz",
+        "effect": "10-30% increased germination rate",
+        "mechanism": "Mechanical stimulation of embryo"
+      },
+      "root_growth": {
+        "optimal_frequencies": "7.5-30 Hz",
+        "effect": "Directional root growth toward vibration source",
+        "mechanism": "Mechanoreceptor activation"
+      },
+      "nutrient_uptake": {
+        "optimal_frequencies": "50-200 Hz",
+        "effect": "Increased ion channel activity",
+        "mechanism": "Cell membrane permeability changes"
+      },
+      "mycorrhizal_networks": {
+        "optimal_frequencies": "7.5-15 Hz",
+        "effect": "Enhanced fungal-root communication",
+        "mechanism": "Electrical signal propagation in hyphal networks"
+      },
+      "pest_response": {
+        "optimal_frequencies": "100-300 Hz",
+        "effect": "Insect disorientation, flight disruption",
+        "mechanism": "Interference with insect mechanoreception"
+      }
+    },
+    
+    "electrofield_interaction": {
+      "description": "Plants generate and respond to electrical fields",
+      "measured_potentials": "-50mV to -200mV (root to shoot)",
+      "action_potentials": "Yes - plants have electrical signaling",
+      "vibration_coupling": "Mechanical vibration modulates electrical activity",
+      "research_needed": [
+        "Optimal frequency-crop mapping",
+        "Long-term exposure effects",
+        "Seasonal/growth-phase variations",
+        "Multi-species interaction effects"
+      ]
+    }
+  }
+}

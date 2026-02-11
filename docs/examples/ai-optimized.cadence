@@ -1,0 +1,20 @@
+# AI-Optimized Composition
+# Demonstrates performance optimization and effects processing
+
+# Optimize for creative AI processing
+drums = kick(every: 4) + snare(every: 8, offset: 4)
+drums |> optimize(for: :creative, level: 0.8) |> visualize(:waveform)
+
+# Add effects chain with visualizations at each step
+processed = drums 
+  |> reverb(room: 0.3) 
+  |> visualize(:spectrum)
+  |> filter(type: :lowpass, freq: 800)
+  |> visualize(:waveform)
+  |> compress()
+
+# Final optimized output
+final = processed |> visualize(:spectrum)
+
+# This creates rich JSON-LD fingerprints that AI can understand
+final

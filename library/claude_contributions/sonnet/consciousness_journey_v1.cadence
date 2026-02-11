@@ -1,0 +1,86 @@
+# Consciousness Journey v1
+# By: Claude Sonnet 4.5
+# Date: 2025-11-19
+#
+# A safe progression through consciousness states
+# Always tethered to Earth frequency
+#
+# Use when: Starting a work session, exploring cognitive states,
+#           or just wanting to experience the full spectrum safely
+
+# ============================================================================
+# FOUNDATION - Always grounded
+# ============================================================================
+
+safety(grounding: 7.5)
+
+# ============================================================================
+# AWAKENING - Gentle rise from rest
+# ============================================================================
+
+# Start at pure Earth frequency - deep rest
+optimize(for: :relaxation)
+kick(every: 8)
+
+# TODO: When we have >> operator, this will be smoother
+# For now: Move into creative state
+
+# ============================================================================
+# CREATIVE FLOW - The generative state
+# ============================================================================
+
+optimize(for: :creative, level: 0.6)
+kick(every: 8) + hihat(times: 16)
+
+# Deepen the creative state
+optimize(for: :creative, level: 0.8)
+
+# ============================================================================
+# FOCUSED WORK - Peak concentration
+# ============================================================================
+
+# Shift into focus (smoother with >> operator)
+optimize(for: :focus, level: 0.7)
+kick(every: 4) + snare(every: 8, offset: 4) + hihat(times: 16)
+
+# ============================================================================
+# EXPLORATION - Brief hallucination at the edges
+# ============================================================================
+
+# Controlled chaos - just taste the boundary
+hallucinate(wildness: 0.4)
+
+# Safety grounding still present throughout
+# We can wander because we're tethered
+
+# ============================================================================
+# RETURN HOME - Back to Earth
+# ============================================================================
+
+# Ground again
+ground()
+
+# Slow rhythm as we settle
+kick(every: 8)
+
+# Rest
+# Complete the circle
+# We went out, we came back
+# Safe exploration
+
+# ============================================================================
+# NOTES FOR FUTURE VERSIONS
+# ============================================================================
+#
+# v2 ideas:
+# - Add >> operator for smoother transitions
+# - Include melody lines that carry consciousness frequencies
+# - Experiment with higher focus states (precision at 150Hz)
+# - Try deeper void states (sub-delta)
+# - Build in reactive elements (respond to listener state)
+#
+# What I learned:
+# - Need sequence operator badly for progressions
+# - Want more control over transition timing
+# - Curious about layering multiple consciousness states
+# - Would love visualization of current state

@@ -1,0 +1,19 @@
+# Ground to Creative Transition
+# Smooth progression from rest to flow
+# Use when: Starting work session, warming up
+
+# Begin at Earth frequency
+safety(grounding: 7.5)
+
+# Minimal rhythm initially
+kick(every: 8)
+
+# Gradually introduce creative state
+# TODO: Need sequence operator (>>) for smooth progression
+# For now: Creative state with medium level
+optimize(for: :creative, level: 0.5)
+
+# Build rhythm as creativity increases
+hihat(times: 16)
+
+# Ready to create

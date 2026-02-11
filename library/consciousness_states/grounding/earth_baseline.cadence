@@ -1,0 +1,12 @@
+# Earth Baseline
+# Pure grounding - Tesla's frequency
+# Use when: Need to return to safe state, after intense work, before sleep
+
+# Establish safety
+safety(grounding: 7.5)
+
+# Pure Earth frequency with minimal rhythm
+kick(every: 8)
+
+# Just ground, nothing else
+# Duration: Eternal - loop as long as needed

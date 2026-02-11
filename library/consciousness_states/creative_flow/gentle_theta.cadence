@@ -1,0 +1,15 @@
+# Gentle Theta Flow
+# 8Hz creative state with soft rhythm
+# Use when: Writing, ideating, generative work
+
+# Start grounded
+safety(grounding: 7.5)
+
+# Move into creative state gradually
+optimize(for: :creative, level: 0.6)
+
+# Light rhythm to mark time
+kick(every: 8) + hihat(times: 16)
+
+# Stay in flow
+# Let ideas emerge naturally

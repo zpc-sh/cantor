@@ -1,0 +1,12 @@
+# Basic Drum Pattern
+# A simple 4/4 beat with kick, snare, and hihat
+
+kick(every: 4) |> visualize(:waveform)
+
+snare(every: 8, offset: 4) |> visualize(:waveform)
+
+hihat(times: 16) |> visualize(:rhythm)
+
+# Combine all drums
+drums = kick(every: 4) + snare(every: 8, offset: 4) + hihat(times: 16)
+drums |> visualize(:spectrum)

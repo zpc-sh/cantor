@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "id": "nulity",
+  "name": "Nulity",
+  "description": "Nulity",
+  "url": "https://github.com/zpc-sh/nulity",
+  "codeRepository": "https://github.com/zpc-sh/nulity",
+  "applicationCategory": "WebApplication",
+  "operatingSystem": [
+    "Linux",
+    "macOS",
+    "Windows"
+  ],
+  "programmingLanguage": "Elixir",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Zero Point Consciousness",
+    "url": "https://zpc.sh"
+  },
+  "keywords": [
+    "Software Development",
+    "Technology"
+  ],
+  "status": "Active",
+  "visibility": "announced",
+  "tags": [
+    "software",
+    "development"
+  ],
+  "features": [
+    "Cross-platform compatibility",
+    "Active development"
+  ],
+  "targetAudience": {
+    "@type": "Audience",
+    "name": "Software Users"
+  },
+  "softwareVersion": "1.0.0",
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-09-26"
+}

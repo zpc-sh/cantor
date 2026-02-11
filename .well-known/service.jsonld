@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication", 
+  "id": "nulity",
+  "name": "Nulity",
+  "description": "AI Music Platform for Consciousness-Expanding Audio - Features Cadence declarative music language",
+  "url": "https://nulity.com",
+  "applicationCategory": "MultimediaApplication",
+  "keywords": [
+    "AI Music Generation",
+    "Consciousness Audio",
+    "Music Composition"
+  ],
+  "tags": [
+    "ai-music",
+    "consciousness",
+    "music-composition"
+  ],
+  "features": [
+    "Cadence declarative music language",
+    "AI-powered composition",
+    "Consciousness-expanding audio experiences",
+    "Multi-target compilation (audio, AMF, MIDI)",
+    "Web Audio API integration"
+  ],
+  "programmingLanguage": "Elixir"
+}

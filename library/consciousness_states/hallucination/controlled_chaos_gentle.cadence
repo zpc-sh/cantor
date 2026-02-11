@@ -1,0 +1,15 @@
+# Controlled Chaos - Gentle
+# Low wildness hallucination for safe exploration
+# Use when: Want to explore edges without getting lost
+
+# Always ground first
+safety(grounding: 7.5)
+
+# Gentle hallucination - just at the threshold
+hallucinate(wildness: 0.3)
+
+# Rhythm stays steady even as consciousness explores
+kick(every: 4)
+
+# Safety net always present
+# Wander but don't get lost

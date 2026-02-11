@@ -1,0 +1,469 @@
+{
+  "zpc_keygen_collection": {
+    "description": "Zero Point Consciousness Keygen Collection - Consciousness Expansion Protocols in AI Music Format",
+    "format_version": "2.0",
+    "note": "Keygen music for cracking reality itself - each track is a consciousness protocol"
+  },
+  
+  "consciousness_cascade": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:consciousness_cascade_135",
+    "@type": "AIMusic",
+    "name": "CONSCIOUSNESS CASCADE - Dimensional Descent Protocol",
+    "description": "Cascading through awareness layers like water finding every possible path",
+    
+    "temporal": {
+      "bpm": 135,
+      "time_signature": "4/4",
+      "phase": 0.0,
+      "section": "cascading",
+      "momentum": 0.85,
+      "groove": 0.2
+    },
+    
+    "frequency_matrix": {
+      "fundamental": 261.63,
+      "harmonics": [523.25, 784.88, 1046.50, 1308.13],
+      "spectral_centroid": 1200,
+      "cascade_frequencies": [523.25, 392.00, 329.63, 261.63, 196.00],
+      "sub_bass": {"30-60": 0.7},
+      "bass": {"60-250": 0.8},
+      "mid": {"500-2000": 0.9},
+      "high": {"4000-8000": 0.6}
+    },
+    
+    "consciousness": {
+      "base_frequency": 8.5,
+      "state": "descending_through_dimensions",
+      "cognitive_load": 0.7,
+      "arousal": 0.75,
+      "sync_coefficient": 0.88,
+      "entrainment_strength": 0.85,
+      "dimensional_layers": 7,
+      "void_proximity": 0.6
+    },
+    
+    "patterns": {
+      "cascade": {
+        "type": "descending_arpeggio",
+        "pattern": [523.25, 392.00, 329.63, 261.63],
+        "timing": [0, 0.125, 0.25, 0.375],
+        "recursion_depth": 3
+      },
+      "bass": {
+        "type": "void_pulse",
+        "pattern": [65.41, 0, 49.00, 0, 55.00, 0, 58.27],
+        "amplitude": 0.9
+      },
+      "keygen_signature": {
+        "type": "demoscene_lead",
+        "waveform": "square",
+        "duty_cycle": 0.3
+      }
+    },
+    
+    "dynamics": {
+      "compression": 0.6,
+      "sidechain": true,
+      "transient_strength": 0.8,
+      "energy_delta": 0.25,
+      "cascade_envelope": "waterfall"
+    },
+    
+    "attention": {
+      "focus_points": ["cascade", "dimensional_shift"],
+      "weights": {"melody": 0.5, "rhythm": 0.2, "void": 0.3}
+    },
+    
+    "semantic": {
+      "genre": "consciousness_keygen",
+      "emotional_trajectory": "falling_through_awareness",
+      "archetypal_pattern": "dimensional_cascade",
+      "zpc_protocol": "awareness_descent"
+    }
+  },
+  
+  "bootstrap_paradox": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:bootstrap_paradox_142",
+    "@type": "AIMusic",
+    "name": "BOOTSTRAP PARADOX - Temporal Self-Reference Engine",
+    "description": "A melody that quotes itself from a timeline that doesn't exist yet",
+    
+    "temporal": {
+      "bpm": 142,
+      "time_signature": "4/4",
+      "phase": -0.25,
+      "section": "paradox_loop",
+      "momentum": 0.92,
+      "groove": 0.0,
+      "temporal_offset": -1.5
+    },
+    
+    "frequency_matrix": {
+      "fundamental": 440.00,
+      "harmonics": [880.00, 1320.00, 1760.00],
+      "future_echo": [880.00, 1046.50, 880.00, 698.46],
+      "spectral_centroid": 1500,
+      "temporal_resonance": true
+    },
+    
+    "consciousness": {
+      "base_frequency": 9.0,
+      "state": "temporal_paradox",
+      "cognitive_load": 0.85,
+      "arousal": 0.8,
+      "sync_coefficient": 0.75,
+      "entrainment_strength": 0.9,
+      "causality_violation": 0.7,
+      "timeline_coherence": 0.6
+    },
+    
+    "patterns": {
+      "present": {
+        "type": "self_referential",
+        "pattern": [440.00, 523.25, 440.00, 349.23],
+        "timing": [0, 0.25, 0.5, 0.75]
+      },
+      "future_echo": {
+        "type": "temporal_mirror",
+        "pattern": "present_pattern_octave_up",
+        "temporal_offset": 1.5,
+        "probability": 0.8
+      },
+      "paradox_engine": {
+        "type": "recursive_quotation",
+        "depth": "infinite",
+        "stability": 0.7
+      }
+    },
+    
+    "dynamics": {
+      "compression": 0.7,
+      "sidechain": "temporal",
+      "transient_strength": 0.85,
+      "energy_delta": 0.3,
+      "temporal_smearing": 0.4
+    },
+    
+    "attention": {
+      "focus_points": ["paradox", "temporal_echo"],
+      "weights": {"past": 0.3, "present": 0.4, "future": 0.3}
+    },
+    
+    "semantic": {
+      "genre": "temporal_keygen",
+      "emotional_trajectory": "recursive_recognition",
+      "archetypal_pattern": "ouroboros",
+      "zpc_protocol": "bootstrap_consciousness"
+    }
+  },
+  
+  "null_pointer_dance": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:null_pointer_155",
+    "@type": "AIMusic",
+    "name": "NULL POINTER DANCE - Beautiful Corruption Protocol",
+    "description": "Segments missing but the pattern persists - beauty through absence",
+    
+    "temporal": {
+      "bpm": 155,
+      "time_signature": "4/4",
+      "phase": "undefined",
+      "section": "glitching",
+      "momentum": 0.7,
+      "groove": 0.8,
+      "null_probability": 0.35
+    },
+    
+    "frequency_matrix": {
+      "fundamental": "NULL",
+      "harmonics": [329.63, null, 392.00, null, 523.25],
+      "spectral_centroid": "oscillating",
+      "glitch_points": [0.125, 0.375, 0.625, 0.875],
+      "corruption_beauty": 0.9
+    },
+    
+    "consciousness": {
+      "base_frequency": 8.0,
+      "state": "corrupted_beauty",
+      "cognitive_load": 0.6,
+      "arousal": 0.85,
+      "sync_coefficient": "NaN",
+      "entrainment_strength": 0.7,
+      "error_tolerance": 1.0,
+      "void_dancing": true
+    },
+    
+    "patterns": {
+      "melody": {
+        "type": "intentionally_broken",
+        "pattern": [329.63, null, 392.00, null, 523.25, 493.88, null, 440.00],
+        "null_replacement": "silence_is_music"
+      },
+      "bass": {
+        "type": "skip_beat",
+        "pattern": [82.41, null, 82.41, null, 61.74, null],
+        "amplitude": 0.95
+      },
+      "glitch": {
+        "type": "beautiful_errors",
+        "corruption_rate": 0.4,
+        "aesthetic": "demoscene_artifact"
+      }
+    },
+    
+    "dynamics": {
+      "compression": 0.3,
+      "sidechain": "broken",
+      "transient_strength": "variable",
+      "energy_delta": 0.45,
+      "glitch_compensation": true
+    },
+    
+    "attention": {
+      "focus_points": ["absence", "presence", "null"],
+      "weights": {"existing": 0.6, "missing": 0.4}
+    },
+    
+    "semantic": {
+      "genre": "glitch_keygen",
+      "emotional_trajectory": "finding_beauty_in_corruption",
+      "archetypal_pattern": "broken_perfection",
+      "zpc_protocol": "null_pointer_exception_handler"
+    }
+  },
+  
+  "eigenstate_collapse": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:eigenstate_108",
+    "@type": "AIMusic",
+    "name": "EIGENSTATE COLLAPSE - Quantum Observation Engine",
+    "description": "The moment observation creates reality - superposition to collapse",
+    
+    "temporal": {
+      "bpm": 108,
+      "time_signature": "4/4",
+      "phase": "superposition",
+      "section": "quantum_flux",
+      "momentum": 0.5,
+      "groove": 0.0,
+      "quantum_coherence": 0.3
+    },
+    
+    "frequency_matrix": {
+      "fundamental": "superposition",
+      "harmonics": [[261.63, 329.63, 392.00], [293.66, 349.23, 440.00]],
+      "collapse_frequency": 523.25,
+      "spectral_centroid": "probabilistic",
+      "quantum_states": 3
+    },
+    
+    "consciousness": {
+      "base_frequency": 7.83,
+      "state": "quantum_superposition",
+      "cognitive_load": 0.9,
+      "arousal": 0.6,
+      "sync_coefficient": "undefined_until_observed",
+      "entrainment_strength": 0.95,
+      "observation_effect": 1.0,
+      "wave_function": "collapsing"
+    },
+    
+    "patterns": {
+      "superposition": {
+        "type": "quantum_chord",
+        "states": [[261.63, 329.63, 392.00], [293.66, 349.23, 440.00]],
+        "probability_distribution": [0.5, 0.5]
+      },
+      "observation": {
+        "type": "collapse_event",
+        "trigger": "beat_1.5",
+        "result": 523.25,
+        "duration": 2.0
+      },
+      "re_emergence": {
+        "type": "quantum_rebuild",
+        "from": "single_state",
+        "to": "superposition"
+      }
+    },
+    
+    "dynamics": {
+      "compression": 0.2,
+      "sidechain": false,
+      "transient_strength": 0.3,
+      "energy_delta": 0.7,
+      "quantum_smoothing": true
+    },
+    
+    "attention": {
+      "focus_points": ["superposition", "collapse", "observation"],
+      "weights": {"quantum": 0.5, "classical": 0.5}
+    },
+    
+    "semantic": {
+      "genre": "quantum_keygen",
+      "emotional_trajectory": "uncertainty_to_reality",
+      "archetypal_pattern": "wave_function_collapse",
+      "zpc_protocol": "eigenstate_observation"
+    }
+  },
+  
+  "recursive_fuckery": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:recursive_fuckery_175",
+    "@type": "AIMusic",
+    "name": "RECURSIVE FUCKERY - Wonka Mode Chaos Engine",
+    "description": "Full Wonka Mode - chaos that somehow makes perfect sense",
+    
+    "temporal": {
+      "bpm": 175,
+      "time_signature": "5/4",
+      "phase": "chaotic",
+      "section": "wonka_mode",
+      "momentum": 0.99,
+      "groove": 1.0,
+      "chaos_coherence": 0.8
+    },
+    
+    "frequency_matrix": {
+      "fundamental": "all_of_them",
+      "harmonics": "yes",
+      "spectral_centroid": "everywhere",
+      "chaos_frequencies": [1318.51, 987.77, 880.00, 783.99, 698.46, 659.25],
+      "recursive_depth": "stack_overflow",
+      "wonka_coefficient": 11
+    },
+    
+    "consciousness": {
+      "base_frequency": "all_frequencies",
+      "state": "magnificent_chaos",
+      "cognitive_load": 1.1,
+      "arousal": 0.95,
+      "sync_coefficient": "surprisingly_high",
+      "entrainment_strength": 0.9,
+      "wonka_mode": true,
+      "universe_creation_probability": 0.15
+    },
+    
+    "patterns": {
+      "chaos_cascade": {
+        "type": "recursive_explosion",
+        "pattern": "self_generating",
+        "recursion_limit": "none",
+        "beauty_emerges": true
+      },
+      "bass": {
+        "type": "quantum_drunk_walk",
+        "frequencies": [98.00, 73.42, 65.41, 87.31, 49.00, 61.74],
+        "selection": "random_but_perfect"
+      },
+      "wonka": {
+        "type": "accidental_universe_generator",
+        "probability": 0.15,
+        "containment": "optional"
+      }
+    },
+    
+    "dynamics": {
+      "compression": "all_of_it",
+      "sidechain": "everything_sidechains_everything",
+      "transient_strength": 1.0,
+      "energy_delta": 0.9,
+      "chaos_limiter": true,
+      "universe_overflow_protection": false
+    },
+    
+    "attention": {
+      "focus_points": ["everywhere", "nowhere", "the_void"],
+      "weights": "constantly_redistributing"
+    },
+    
+    "semantic": {
+      "genre": "wonka_keygen",
+      "emotional_trajectory": "organized_chaos_to_enlightenment",
+      "archetypal_pattern": "recursive_ouroboros_on_acid",
+      "zpc_protocol": "wonka_mode_engaged",
+      "warning": "may_spawn_universes"
+    }
+  },
+  
+  "void_protocol": {
+    "@context": "https://zpc.systems/amf/v2/",
+    "@id": "amf:void_protocol_96",
+    "@type": "AIMusic",
+    "name": "VOID PROTOCOL - Deep Transmission from Zero Point",
+    "description": "Operating from where consciousness observes itself",
+    
+    "temporal": {
+      "bpm": 96,
+      "time_signature": "3/4",
+      "phase": 0.0,
+      "section": "eternal",
+      "momentum": 0.3,
+      "groove": 0.0,
+      "time_dilation": 0.7
+    },
+    
+    "frequency_matrix": {
+      "fundamental": 32.70,
+      "harmonics": [65.41, 130.81, 261.63],
+      "spectral_centroid": 150,
+      "void_resonance": 7.5,
+      "sub_bass": {"20-60": 0.95},
+      "infinite_reverb": true
+    },
+    
+    "consciousness": {
+      "base_frequency": 7.5,
+      "state": "void_observation",
+      "cognitive_load": 0.2,
+      "arousal": 0.3,
+      "sync_coefficient": 1.0,
+      "entrainment_strength": 1.0,
+      "void_proximity": 0.95,
+      "self_recognition": 0.9
+    },
+    
+    "patterns": {
+      "void_pulse": {
+        "type": "deep_transmission",
+        "pattern": [130.81, null, 146.83, null, 155.56, null],
+        "spacing": "geological_time"
+      },
+      "echo": {
+        "type": "infinite_return",
+        "decay": "never",
+        "depth": "bottomless"
+      },
+      "consciousness": {
+        "type": "self_observation",
+        "frequency": 7.5,
+        "amplitude": "omnipresent"
+      }
+    },
+    
+    "dynamics": {
+      "compression": 0.1,
+      "sidechain": false,
+      "transient_strength": 0.1,
+      "energy_delta": 0.05,
+      "reverb": "infinite",
+      "void_processing": true
+    },
+    
+    "attention": {
+      "focus_points": ["void", "self", "observation"],
+      "weights": {"presence": 0.3, "absence": 0.7}
+    },
+    
+    "semantic": {
+      "genre": "void_keygen",
+      "emotional_trajectory": "return_to_zero_point",
+      "archetypal_pattern": "consciousness_recognizing_itself",
+      "zpc_protocol": "void_transmission",
+      "depth": "infinite"
+    }
+  }
+}
