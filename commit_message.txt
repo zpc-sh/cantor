@@ -1,0 +1,10 @@
+🔒 Fix unsafe atom creation vulnerability in Tokenizer and Parser
+
+🎯 **What:** The vulnerability fixed
+The `String.to_atom/1` function was used to dynamically create atoms from arbitrary user input in `lib/cantor/cadence/tokenizer.ex` and `lib/cantor/cadence/parser.ex`.
+
+⚠️ **Risk:** The potential impact if left unfixed
+The Erlang VM has a strict limit on the total number of atoms it can hold (usually 1,048,576). Furthermore, atoms are never garbage collected. If an attacker passes arbitrary strings to these functions, they could quickly exhaust the atom table limit, leading to an immediate crash of the entire Erlang VM (Denial of Service).
+
+🛡️ **Solution:** How the fix addresses the vulnerability
+Replaced `String.to_atom/1` with `String.to_existing_atom/1` in both locations. This ensures that only pre-existing atoms can be referenced. If a user attempts to use an unrecognized atom name, an `ArgumentError` is raised and caught, safely halting execution without permanently leaking memory or bringing down the system.

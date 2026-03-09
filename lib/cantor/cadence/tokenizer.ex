@@ -63,7 +63,7 @@ defmodule Cantor.Cadence.Tokenizer do
       # Atoms first (before colon)
       match = Regex.run(~r/^:([a-zA-Z_][a-zA-Z0-9_]*)/, line) ->
         [match_str, atom_name] = match
-        {:atom, String.to_atom(atom_name), String.slice(line, String.length(match_str)..-1//1)}
+        {:atom, String.to_existing_atom(atom_name), String.slice(line, String.length(match_str)..-1//1)}
       
       String.starts_with?(line, ":") ->
         {:colon, ":", String.slice(line, 1..-1//1)}
