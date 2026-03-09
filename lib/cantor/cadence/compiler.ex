@@ -12,28 +12,6 @@ defmodule Cantor.Cadence.Compiler do
 
   def compile(ast, target \\ :fingerprint)
 
-  @doc """
-  Fuses a Score (Template) with an Orchestra (Constraint) to produce a Performance (AMF).
-  """
-  def orchestrate(score, orchestra) do
-    # 1. Parse/Compile the Score's notation if needed (assuming it's already a map from compile/2)
-    base_data = score.notation || %{}
-
-    # 2. Apply Orchestra configuration (tuning, instruments)
-    tuning = orchestra.tuning || %{}
-    instruments = orchestra.instruments || %{}
-
-    # Merge logic: Orchestra overrides Score defaults, but Score pattern data remains
-    # This is a placeholder for the actual "Fusion" logic (e.g., constraint solving)
-    Map.merge(base_data, %{
-      "orchestra" => %{
-        "tuning" => tuning,
-        "instruments" => instruments
-      },
-      "constraints_applied" => true
-    })
-  end
-
   def compile(ast, :fingerprint) when is_list(ast) do
     ast
     |> Enum.map(&compile_statement(&1, :fingerprint))
