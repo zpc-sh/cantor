@@ -77,13 +77,7 @@ defmodule Cantor.Cadence.Parser do
       [{:identifier, name, line} | rest] ->
         {AST.identifier(name, line), rest}
         
-      [{:integer, value, line} | rest] ->
-        {AST.literal(value, line), rest}
-        
-      [{:float, value, line} | rest] ->
-        {AST.literal(value, line), rest}
-        
-      [{:atom, value, line} | rest] ->
+      [{type, value, line} | rest] when type in [:integer, :float, :atom] ->
         {AST.literal(value, line), rest}
         
       [{:lbracket, _, line} | rest] ->
