@@ -66,7 +66,7 @@ defmodule Cantor.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
-      
+
       # Ash Framework
       {:ash, "~> 3.0"},
       {:ash_postgres, "~> 2.0"},
@@ -75,11 +75,11 @@ defmodule Cantor.MixProject do
       {:ash_graphql, "~> 1.0"},
       {:ash_authentication, "~> 4.0"},
       {:ash_authentication_phoenix, "~> 2.0"},
-      
+
       # Custom libraries
       {:jsonld_ex, "== 0.4.0"},
       {:markdown_ld, "~> 0.4.0"},
-      
+
       # SAT solver for Ash policies
       {:picosat_elixir, "~> 0.2"}
     ]

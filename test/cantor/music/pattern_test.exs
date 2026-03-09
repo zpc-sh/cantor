@@ -69,19 +69,27 @@ defmodule Cantor.Music.PatternTest do
     end
 
     test "read public patterns" do
-      Ash.create!(Pattern, %{
-        name: "Public Pattern",
-        pattern_type: :rhythm,
-        cadence_code: "kick()",
-        is_public: true
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Public Pattern",
+          pattern_type: :rhythm,
+          cadence_code: "kick()",
+          is_public: true
+        },
+        action: :create
+      )
 
-      Ash.create!(Pattern, %{
-        name: "Private Pattern",
-        pattern_type: :rhythm,
-        cadence_code: "snare()",
-        is_public: false
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Private Pattern",
+          pattern_type: :rhythm,
+          cadence_code: "snare()",
+          is_public: false
+        },
+        action: :create
+      )
 
       query = Ash.Query.for_read(Pattern, :public)
       results = Ash.read!(query)
@@ -91,17 +99,25 @@ defmodule Cantor.Music.PatternTest do
     end
 
     test "read by pattern type" do
-      Ash.create!(Pattern, %{
-        name: "Rhythm Pattern",
-        pattern_type: :rhythm,
-        cadence_code: "kick()"
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Rhythm Pattern",
+          pattern_type: :rhythm,
+          cadence_code: "kick()"
+        },
+        action: :create
+      )
 
-      Ash.create!(Pattern, %{
-        name: "Melody Pattern",
-        pattern_type: :melody,
-        cadence_code: "scale(:A, :minor)"
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Melody Pattern",
+          pattern_type: :melody,
+          cadence_code: "scale(:A, :minor)"
+        },
+        action: :create
+      )
 
       query = Ash.Query.for_read(Pattern, :by_type, %{pattern_type: :melody})
       results = Ash.read!(query)
@@ -111,19 +127,27 @@ defmodule Cantor.Music.PatternTest do
     end
 
     test "read by tag" do
-      Ash.create!(Pattern, %{
-        name: "Tag Pattern 1",
-        pattern_type: :rhythm,
-        cadence_code: "kick()",
-        tags: ["techno", "fast"]
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Tag Pattern 1",
+          pattern_type: :rhythm,
+          cadence_code: "kick()",
+          tags: ["techno", "fast"]
+        },
+        action: :create
+      )
 
-      Ash.create!(Pattern, %{
-        name: "Tag Pattern 2",
-        pattern_type: :rhythm,
-        cadence_code: "snare()",
-        tags: ["house"]
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Tag Pattern 2",
+          pattern_type: :rhythm,
+          cadence_code: "snare()",
+          tags: ["house"]
+        },
+        action: :create
+      )
 
       query = Ash.Query.for_read(Pattern, :by_tag, %{tag: "techno"})
       results = Ash.read!(query)
@@ -133,19 +157,27 @@ defmodule Cantor.Music.PatternTest do
     end
 
     test "read by difficulty" do
-      Ash.create!(Pattern, %{
-        name: "Easy Pattern",
-        pattern_type: :rhythm,
-        cadence_code: "kick()",
-        difficulty_level: 2
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Easy Pattern",
+          pattern_type: :rhythm,
+          cadence_code: "kick()",
+          difficulty_level: 2
+        },
+        action: :create
+      )
 
-      Ash.create!(Pattern, %{
-        name: "Hard Pattern",
-        pattern_type: :rhythm,
-        cadence_code: "kick(every: 16)",
-        difficulty_level: 9
-      }, action: :create)
+      Ash.create!(
+        Pattern,
+        %{
+          name: "Hard Pattern",
+          pattern_type: :rhythm,
+          cadence_code: "kick(every: 16)",
+          difficulty_level: 9
+        },
+        action: :create
+      )
 
       query = Ash.Query.for_read(Pattern, :by_difficulty, %{min_difficulty: 1, max_difficulty: 5})
       results = Ash.read!(query)

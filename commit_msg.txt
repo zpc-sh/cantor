@@ -1,5 +1,10 @@
-🧪 Add test file for Music Pattern Resource
+🔒 Fix unsafe atom creation in Cadence parser
 
-🎯 What: Added `test/cantor/music/pattern_test.exs` to fill the testing gap for the `Cantor.Music.Pattern` Ash resource.
-📊 Coverage: Added comprehensive tests for the `:create` action, `:update` action, and all read actions (`:public`, `:by_type`, `:by_tag`, `:by_difficulty`). The tests cover happy paths, default value initializations, and constraints (e.g. required attributes, enum types, numerical boundaries).
-✨ Result: The test coverage is significantly improved by verifying that pattern creations and read queries enforce the proper conditions and return accurate patterns.
+🎯 **What:** The vulnerability fixed
+In the Cadence parser (`lib/cantor/cadence/parser.ex`), dynamic user input (specifically keyword argument keys) was being converted to atoms using `String.to_atom/1`.
+
+⚠️ **Risk:** The potential impact if left unfixed
+Because Erlang atoms are not garbage collected and there is a hard limit on the maximum number of atoms (typically 1,048,576), creating atoms from untrusted input exposes the application to a Denial of Service (DoS) attack. An attacker could crash the VM simply by sending a large number of unique keys in the payload.
+
+🛡️ **Solution:** How the fix addresses the vulnerability
+The call to `String.to_atom/1` was replaced with `String.to_existing_atom/1`, ensuring that only atoms already known to the application can be instantiated during parsing. Added a test that verifies the parser now correctly traps the resulting `ArgumentError` when a non-existent atom is provided and returns a graceful `{:error, message}` tuple instead.
