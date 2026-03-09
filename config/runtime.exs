@@ -1,7 +1,17 @@
 import Config
 
 # Configure AshAuthentication signing secrets
-config :cantor, :token_signing_secret, System.get_env("TOKEN_SIGNING_SECRET") || "dev-secret-key-change-in-production"
+token_signing_secret =
+  if config_env() == :prod do
+    System.get_env("TOKEN_SIGNING_SECRET") ||
+      raise """
+      environment variable TOKEN_SIGNING_SECRET is missing.
+      """
+  else
+    System.get_env("TOKEN_SIGNING_SECRET") || "dev-secret-key-change-in-production"
+  end
+
+config :cantor, :token_signing_secret, token_signing_secret
 
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
