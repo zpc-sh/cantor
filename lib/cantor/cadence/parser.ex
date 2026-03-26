@@ -118,7 +118,7 @@ defmodule Cantor.Cadence.Parser do
       # Keyword argument: identifier: value  
       [{:identifier, key, line}, {:colon, _, _} | rest] ->
         {value, remaining} = parse_expression(rest)
-        keyword_arg = %{type: :keyword_arg, key: String.to_atom(key), value: value, line: line}
+        keyword_arg = %{type: :keyword_arg, key: String.to_existing_atom(key), value: value, line: line}
         {keyword_arg, remaining}
       # Also support atoms: :key, value
       [{:atom, key, line}, {:colon, _, _} | rest] ->
