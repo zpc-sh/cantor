@@ -36,3 +36,9 @@ npm-debug.log
 /assets/node_modules/
 
 .envrc
+elixir_1_16/
+elixir-otp-25.zip
+elixir_1_18/
+elixir-1.18.zip
+deps/
+_build/
