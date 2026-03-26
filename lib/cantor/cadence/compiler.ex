@@ -13,9 +13,13 @@ defmodule Cantor.Cadence.Compiler do
   def compile(ast, target \\ :fingerprint)
 
   def compile(ast, :fingerprint) when is_list(ast) do
-    ast
-    |> Enum.map(&compile_statement(&1, :fingerprint))
-    |> merge_fingerprints()
+    # Optimization: Use a list comprehension which is faster than Enum.map
+    fingerprints =
+      for statement <- ast do
+        compile_statement(statement, :fingerprint)
+      end
+
+    merge_fingerprints(fingerprints)
   end
 
   def compile(ast, :fingerprint) do
@@ -325,16 +329,23 @@ defmodule Cantor.Cadence.Compiler do
       "@context" => @context,
       "@type" => "cadence:FunctionCall",
       "name" => name,
-      "args" => Enum.map(args, &compile_statement(&1, :fingerprint)),
+      # Optimization: use list comprehension instead of Enum.map
+      "args" => (for arg <- args do
+        compile_statement(arg, :fingerprint)
+      end),
       "line" => line
     }
   end
 
   defp extract_params(args) do
-    args
-    |> Enum.filter(&(Map.get(&1, :type) == :keyword_arg))
-    |> Enum.into(%{}, fn %{key: key, value: value} ->
-      {key, get_literal_value(value)}
+    # Optimization: Use Enum.reduce to avoid multiple list passes
+    # with Enum.filter then Enum.into
+    Enum.reduce(args, %{}, fn
+      %{type: :keyword_arg, key: key, value: value}, acc ->
+        Map.put(acc, key, get_literal_value(value))
+
+      _, acc ->
+        acc
     end)
   end
 
