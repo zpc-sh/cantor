@@ -64,7 +64,7 @@ defmodule CantorWeb.NotebookLive do
             phx-click="execute_cell"
             phx-value-cell_id={@cell.id}
             disabled={@cell.executing}
-            class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400"
+            class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             <%= if @cell.executing, do: "⏳ Running...", else: "▶️ Run" %>
           </button>
@@ -73,6 +73,8 @@ defmodule CantorWeb.NotebookLive do
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
             class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
+            aria-label="Delete cell"
+            title="Delete cell"
           >
             🗑️
           </button>
