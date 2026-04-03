@@ -10,6 +10,7 @@ defmodule Cantor.Cadence.Parser do
   def parse_tokens(tokens) do
     try do
       {ast, remaining} = parse_statements(tokens, [])
+
       case remaining do
         [] -> {:ok, ast}
         _ -> {:error, "Unexpected tokens: #{inspect(remaining)}"}
@@ -20,7 +21,7 @@ defmodule Cantor.Cadence.Parser do
   end
 
   defp parse_statements([], acc), do: {Enum.reverse(acc), []}
-  
+
   defp parse_statements(tokens, acc) do
     {statement, remaining} = parse_statement(tokens)
     parse_statements(remaining, [statement | acc])
@@ -31,6 +32,7 @@ defmodule Cantor.Cadence.Parser do
       [{:identifier, name, line}, {:assign, _, _} | rest] ->
         {value, remaining} = parse_expression(rest)
         {AST.assignment(name, value, line), remaining}
+
       _ ->
         parse_expression(tokens)
     end
@@ -50,7 +52,7 @@ defmodule Cantor.Cadence.Parser do
     pipe_expr = AST.pipe(left, right, line)
     parse_pipe_rest(pipe_expr, remaining)
   end
-  
+
   defp parse_pipe_rest(left, tokens), do: {left, tokens}
 
   defp parse_addition(tokens) do
@@ -63,7 +65,7 @@ defmodule Cantor.Cadence.Parser do
     add_expr = AST.binary_op(:plus, left, right, line)
     parse_addition_rest(add_expr, remaining)
   end
-  
+
   defp parse_addition_rest(left, tokens), do: {left, tokens}
 
   defp parse_primary(tokens) do
@@ -72,18 +74,18 @@ defmodule Cantor.Cadence.Parser do
       [{:identifier, name, line}, {:lparen, _, _} | rest] ->
         {args, remaining} = parse_function_args(rest)
         {AST.function_call(name, args, line), remaining}
-        
+
       # Plain identifier
       [{:identifier, name, line} | rest] ->
         {AST.identifier(name, line), rest}
-        
+
       [{type, value, line} | rest] when type in [:integer, :float, :atom] ->
         {AST.literal(value, line), rest}
-        
+
       [{:lbracket, _, line} | rest] ->
         {elements, remaining} = parse_list_elements(rest)
         {AST.list(elements, line), remaining}
-        
+
       tokens ->
         raise "Unexpected token: #{inspect(List.first(tokens))}"
     end
@@ -91,9 +93,12 @@ defmodule Cantor.Cadence.Parser do
 
   defp parse_function_args(tokens) do
     case tokens do
-      [{:rparen, _, _} | rest] -> {[], rest}
+      [{:rparen, _, _} | rest] ->
+        {[], rest}
+
       _ ->
         {args, remaining} = parse_arg_list(tokens, [])
+
         case remaining do
           [{:rparen, _, _} | final] -> {args, final}
           _ -> raise "Expected )"
@@ -103,9 +108,12 @@ defmodule Cantor.Cadence.Parser do
 
   defp parse_arg_list(tokens, acc) do
     case tokens do
-      [{:rparen, _, _} | _] -> {Enum.reverse(acc), tokens}
+      [{:rparen, _, _} | _] ->
+        {Enum.reverse(acc), tokens}
+
       _ ->
         {arg, remaining} = parse_argument(tokens)
+
         case remaining do
           [{:comma, _, _} | rest] -> parse_arg_list(rest, [arg | acc])
           _ -> {Enum.reverse([arg | acc]), remaining}
@@ -120,11 +128,13 @@ defmodule Cantor.Cadence.Parser do
         {value, remaining} = parse_expression(rest)
         keyword_arg = %{type: :keyword_arg, key: String.to_atom(key), value: value, line: line}
         {keyword_arg, remaining}
+
       # Also support atoms: :key, value
       [{:atom, key, line}, {:colon, _, _} | rest] ->
         {value, remaining} = parse_expression(rest)
         keyword_arg = %{type: :keyword_arg, key: key, value: value, line: line}
         {keyword_arg, remaining}
+
       _ ->
         parse_expression(tokens)
     end
@@ -132,9 +142,12 @@ defmodule Cantor.Cadence.Parser do
 
   defp parse_list_elements(tokens) do
     case tokens do
-      [{:rbracket, _, _} | rest] -> {[], rest}
+      [{:rbracket, _, _} | rest] ->
+        {[], rest}
+
       _ ->
         {elements, remaining} = parse_element_list(tokens, [])
+
         case remaining do
           [{:rbracket, _, _} | final] -> {elements, final}
           _ -> raise "Expected ]"
@@ -144,9 +157,12 @@ defmodule Cantor.Cadence.Parser do
 
   defp parse_element_list(tokens, acc) do
     case tokens do
-      [{:rbracket, _, _} | _] -> {Enum.reverse(acc), tokens}
+      [{:rbracket, _, _} | _] ->
+        {Enum.reverse(acc), tokens}
+
       _ ->
         {element, remaining} = parse_expression(tokens)
+
         case remaining do
           [{:comma, _, _} | rest] -> parse_element_list(rest, [element | acc])
           _ -> {Enum.reverse([element | acc]), remaining}
