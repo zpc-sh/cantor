@@ -64,7 +64,7 @@ defmodule CantorWeb.NotebookLive do
             phx-click="execute_cell"
             phx-value-cell_id={@cell.id}
             disabled={@cell.executing}
-            class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400"
+            class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-1"
           >
             <%= if @cell.executing, do: "⏳ Running...", else: "▶️ Run" %>
           </button>
@@ -72,7 +72,9 @@ defmodule CantorWeb.NotebookLive do
           <button
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
-            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
+            aria-label="Delete cell"
+            title="Delete cell"
+            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-1"
           >
             🗑️
           </button>
@@ -84,7 +86,8 @@ defmodule CantorWeb.NotebookLive do
           phx-blur="update_cell"
           phx-value-cell_id={@cell.id}
           name="content"
-          class="w-full h-24 p-3 font-mono text-sm bg-gray-900 text-green-400 rounded-lg border-2 border-gray-700 focus:border-purple-500 focus:outline-none resize-none"
+          aria-label={"Cadence code for " <> @cell.id}
+          class="w-full h-24 p-3 font-mono text-sm bg-gray-900 text-green-400 rounded-lg border-2 border-gray-700 focus:border-purple-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 resize-none"
           placeholder="Enter Cadence code..."
         ><%= @cell.content %></textarea>
       </div>
