@@ -73,6 +73,8 @@ defmodule CantorWeb.NotebookLive do
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
             class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
+            aria-label="Delete cell"
+            title="Delete cell"
           >
             🗑️
           </button>
