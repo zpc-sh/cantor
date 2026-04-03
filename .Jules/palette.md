@@ -1,0 +1,3 @@
+## 2024-04-03 - Added accessibility to notebook cell controls
+**Learning:** Icon-only buttons (like Run and Delete in the Cadence Notebook) and status indicators lack proper ARIA labels and screen reader support, making the notebook interface difficult for users relying on assistive technologies. The play/loop/stop audio controls also need ARIA labels for their actions.
+**Action:** Review and add `aria-label` to all icon-only or predominantly icon-based interactive elements across the application to ensure full accessibility. Additionally, add `aria-live="polite"` to dynamic status text so screen readers announce state changes (e.g., when a cell finishes executing).

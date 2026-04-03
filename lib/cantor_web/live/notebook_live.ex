@@ -40,6 +40,7 @@ defmodule CantorWeb.NotebookLive do
         <div class="mt-8 text-center">
           <button
             phx-click="add_cell"
+            aria-label="Add Cadence Cell"
             class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105"
           >
             ➕ Add Cadence Cell
@@ -63,6 +64,8 @@ defmodule CantorWeb.NotebookLive do
           <button
             phx-click="execute_cell"
             phx-value-cell_id={@cell.id}
+            title="Run cell"
+            aria-live="polite"
             disabled={@cell.executing}
             class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400"
           >
@@ -72,6 +75,8 @@ defmodule CantorWeb.NotebookLive do
           <button
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
+            aria-label="Delete cell"
+            title="Delete cell"
             class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
           >
             🗑️
@@ -84,6 +89,7 @@ defmodule CantorWeb.NotebookLive do
           phx-blur="update_cell"
           phx-value-cell_id={@cell.id}
           name="content"
+          aria-label="Cell content"
           class="w-full h-24 p-3 font-mono text-sm bg-gray-900 text-green-400 rounded-lg border-2 border-gray-700 focus:border-purple-500 focus:outline-none resize-none"
           placeholder="Enter Cadence code..."
         ><%= @cell.content %></textarea>
@@ -121,6 +127,7 @@ defmodule CantorWeb.NotebookLive do
                 <button
                   phx-click="play_audio"
                   phx-value-fingerprint={Jason.encode!(@output.fingerprint)}
+                  aria-label="Play audio"
                   class="px-4 py-2 bg-green-500 text-white rounded-lg font-semibold shadow hover:bg-green-600 transition-all transform hover:scale-105"
                 >
                   ▶️ Play
@@ -128,12 +135,14 @@ defmodule CantorWeb.NotebookLive do
                 <button
                   phx-click="loop_audio"
                   phx-value-fingerprint={Jason.encode!(@output.fingerprint)}
+                  aria-label="Loop audio"
                   class="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold shadow hover:bg-blue-600 transition-all transform hover:scale-105"
                 >
                   🔄 Loop
                 </button>
                 <button
                   phx-click="stop_audio"
+                  aria-label="Stop audio"
                   class="px-4 py-2 bg-red-500 text-white rounded-lg font-semibold shadow hover:bg-red-600 transition-all transform hover:scale-105"
                 >
                   ⏹️ Stop
