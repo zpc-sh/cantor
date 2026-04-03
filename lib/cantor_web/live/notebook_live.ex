@@ -72,7 +72,9 @@ defmodule CantorWeb.NotebookLive do
           <button
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
-            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
+            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 focus-visible:ring-2 focus-visible:ring-red-400 focus:outline-none"
+            aria-label="Delete cell"
+            title="Delete cell"
           >
             🗑️
           </button>
@@ -84,6 +86,7 @@ defmodule CantorWeb.NotebookLive do
           phx-blur="update_cell"
           phx-value-cell_id={@cell.id}
           name="content"
+          aria-label="Cadence code"
           class="w-full h-24 p-3 font-mono text-sm bg-gray-900 text-green-400 rounded-lg border-2 border-gray-700 focus:border-purple-500 focus:outline-none resize-none"
           placeholder="Enter Cadence code..."
         ><%= @cell.content %></textarea>
