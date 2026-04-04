@@ -1,0 +1,38 @@
+warning: invalid association `performances` in schema Cantor.Music.Composition: associated schema Cantor.Modalities.Performance does not have field `composition_id`
+└─ lib/cantor/music/composition.ex: Cantor.Music.Composition (module)
+
+    warning: no route path for CantorWeb.Router matches "/auth/sign_in?#{[return_to: params["request_path"]]}"
+    │
+ 26 │         |> Phoenix.LiveView.redirect(to: ~p"/auth/sign_in?#{[return_to: params["request_path"]]}")
+    │                                            ~
+    │
+    └─ lib/cantor_web/live_user_auth.ex:26: CantorWeb.LiveUserAuth.on_mount/4
+
+[info] Running CantorWeb.Endpoint with Bandit 1.8.0 at 127.0.0.1:4000 (http)
+[info] Access CantorWeb.Endpoint at http://localhost:4000
+[debug] Downloading tailwind from https://github.com/tailwindlabs/tailwindcss/releases/download/v4.1.7/tailwindcss-linux-x64
+[debug] Downloading esbuild from https://registry.npmjs.org/@esbuild/linux-x64/0.25.4
+[watch] build finished, watching for changes...
+≈ tailwindcss v4.1.7
+
+/*! 🌼 daisyUI 5.0.35 */
+sh: 1: watchman: not found
+Done in 279ms
+Couldn't watch new directory /app/_build/test/lib/jsonld_ex/native/jsonld_nif/release/deps/.tmpA6ZwRm.temp-archive/: No such file or directory
+Couldn't watch new directory /app/_build/test/lib/jsonld_ex/native/jsonld_nif/release/deps/rmetaaQI35u/: No such file or directory
+[info] GET /notebook
+[debug] Processing with CantorWeb.NotebookLive.__live__/0
+  Parameters: %{}
+  Pipelines: [:browser]
+[info] Sent 200 in 118ms
+[info] CONNECTED TO Phoenix.LiveView.Socket in 55µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "CB4BJB8dWz5kCTEjfC4xJT0dFGx7NFIajV6qiy6H2xTh7ernsxb9CP8Y", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+[debug] MOUNT CantorWeb.NotebookLive
+  Parameters: %{}
+  Session: %{"_csrf_token" => "bH7UvdmvVqeKKKCKNevU8djC"}
+[debug] Replied in 1ms
+[debug] HANDLE EVENT "add_cell" in CantorWeb.NotebookLive
+  Parameters: %{"value" => ""}
+[debug] Replied in 4ms
