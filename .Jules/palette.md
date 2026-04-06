@@ -1,0 +1,3 @@
+## 2024-05-18 - Native Confirmation Dialogs via LiveView
+**Learning:** Phoenix LiveView provides native support for confirmation dialogs through the `data-confirm` HTML attribute. This correctly triggers a browser alert when an element is clicked.
+**Action:** Always prefer `data-confirm` over custom JavaScript or complex modal components for simple destructive actions, as it reduces dependencies and preserves native accessibility features.
