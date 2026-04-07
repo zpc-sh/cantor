@@ -5,11 +5,11 @@ defmodule Cantor.Accounts.Token do
     extensions: [AshAuthentication.TokenResource]
 
   postgres do
-    table "tokens"
-    repo Cantor.Repo
+    table("tokens")
+    repo(Cantor.Repo)
   end
 
   token do
-    domain Cantor.Domain
+    domain(Cantor.Domain)
   end
 end
