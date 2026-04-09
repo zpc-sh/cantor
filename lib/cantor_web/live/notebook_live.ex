@@ -55,10 +55,10 @@ defmodule CantorWeb.NotebookLive do
     <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
       <div class="flex items-center justify-between px-4 py-2 bg-gray-50 border-b">
         <div class="flex items-center gap-2">
-          <span class="text-xs font-mono text-gray-500"><%= @cell.id %></span>
+          <span class="text-xs font-mono text-gray-500">{@cell.id}</span>
           <span class="px-2 py-1 text-xs bg-purple-100 text-purple-700 rounded">Cadence</span>
         </div>
-        
+
         <div class="flex gap-1">
           <button
             phx-click="execute_cell"
@@ -66,13 +66,16 @@ defmodule CantorWeb.NotebookLive do
             disabled={@cell.executing}
             class="px-3 py-1 text-xs bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400"
           >
-            <%= if @cell.executing, do: "⏳ Running...", else: "▶️ Run" %>
+            {if @cell.executing, do: "⏳ Running...", else: "▶️ Run"}
           </button>
-          
+
           <button
             phx-click="delete_cell"
             phx-value-cell_id={@cell.id}
-            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600"
+            aria-label="Delete cell"
+            title="Delete cell"
+            data-confirm="Are you sure you want to delete this cell?"
+            class="px-3 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-1"
           >
             🗑️
           </button>
@@ -107,7 +110,7 @@ defmodule CantorWeb.NotebookLive do
             <h4 class="text-sm font-semibold text-gray-700 mb-2">🔗 JSON-LD Fingerprint</h4>
             <details class="group">
               <summary class="cursor-pointer text-sm text-blue-600 hover:text-blue-800">
-                <%= @output.fingerprint_summary %>
+                {@output.fingerprint_summary}
                 <span class="group-open:rotate-90 inline-block transition-transform ml-1">▶</span>
               </summary>
               <pre class="mt-2 p-3 bg-gray-100 rounded text-xs overflow-x-auto font-mono"><%= Jason.encode!(@output.fingerprint, pretty: true) %></pre>
@@ -141,11 +144,17 @@ defmodule CantorWeb.NotebookLive do
               </div>
             </div>
 
-            <div class="bg-gray-900 rounded-lg p-4 mt-4" id="consciousness-viz" phx-hook="ConsciousnessVisualizer">
+            <div
+              class="bg-gray-900 rounded-lg p-4 mt-4"
+              id="consciousness-viz"
+              phx-hook="ConsciousnessVisualizer"
+            >
               <canvas class="w-full h-64 rounded"></canvas>
             </div>
 
-            <p class="text-xs text-gray-500 mt-2 text-center"><%= @output.viz_info || "Consciousness state visualization" %></p>
+            <p class="text-xs text-gray-500 mt-2 text-center">
+              {@output.viz_info || "Consciousness state visualization"}
+            </p>
           </div>
         </div>
       <% else %>
@@ -184,7 +193,7 @@ defmodule CantorWeb.NotebookLive do
   end
 
   def handle_event("update_cell", %{"cell_id" => cell_id, "content" => content}, socket) do
-    cells = 
+    cells =
       Enum.map(socket.assigns.cells, fn cell ->
         if cell.id == cell_id do
           %{cell | content: content}
@@ -197,7 +206,7 @@ defmodule CantorWeb.NotebookLive do
   end
 
   def handle_event("execute_cell", %{"cell_id" => cell_id}, socket) do
-    cells = 
+    cells =
       Enum.map(socket.assigns.cells, fn cell ->
         if cell.id == cell_id do
           %{cell | executing: true, output: nil}
@@ -213,14 +222,14 @@ defmodule CantorWeb.NotebookLive do
 
   def handle_event("play_audio", %{"fingerprint" => fingerprint_json}, socket) do
     fingerprint = Jason.decode!(fingerprint_json)
-    
+
     socket = push_event(socket, "play_audio", %{fingerprint: fingerprint, loop: false})
     {:noreply, socket}
   end
 
   def handle_event("loop_audio", %{"fingerprint" => fingerprint_json}, socket) do
     fingerprint = Jason.decode!(fingerprint_json)
-    
+
     socket = push_event(socket, "play_audio", %{fingerprint: fingerprint, loop: true})
     {:noreply, socket}
   end
@@ -234,7 +243,7 @@ defmodule CantorWeb.NotebookLive do
     case Parser.parse(cell.content) do
       {:ok, ast} ->
         fingerprint = Compiler.compile(ast, :fingerprint)
-        
+
         output = %{
           success: true,
           fingerprint: fingerprint,
@@ -255,7 +264,7 @@ defmodule CantorWeb.NotebookLive do
   end
 
   defp update_cell_output(socket, cell_id, output) do
-    cells = 
+    cells =
       Enum.map(socket.assigns.cells, fn cell ->
         if cell.id == cell_id do
           %{cell | executing: false, output: output}
@@ -270,8 +279,8 @@ defmodule CantorWeb.NotebookLive do
   defp generate_fingerprint_summary(fingerprint) do
     graph = fingerprint["@graph"] || []
     count = length(graph)
-    
-    types = 
+
+    types =
       graph
       |> Enum.map(&Map.get(&1, "@type", "Unknown"))
       |> Enum.frequencies()
@@ -283,11 +292,11 @@ defmodule CantorWeb.NotebookLive do
 
   defp extract_visualization_info(fingerprint) do
     graph = fingerprint["@graph"] || []
-    
-    visualizers = 
+
+    visualizers =
       Enum.filter(graph, fn node ->
         get_in(node, ["@type"]) == "cadence:Visualizer" or
-        get_in(node, ["processing", "@type"]) == "cadence:Visualizer"
+          get_in(node, ["processing", "@type"]) == "cadence:Visualizer"
       end)
 
     if visualizers != [] do
