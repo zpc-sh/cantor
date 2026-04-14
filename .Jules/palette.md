@@ -1,0 +1,3 @@
+## 2024-04-14 - Add confirmation and accessibility to delete cell button
+**Learning:** Icon-only delete buttons in Phoenix LiveView templates lack accessibility and visual feedback on keyboard focus by default. Adding `aria-label`, a native `title` tooltip, focus ring styles, and Phoenix LiveView’s built-in `data-confirm` attribute for destructive actions ensures a safer, more accessible user experience without requiring custom JavaScript.
+**Action:** Always add `aria-label` and focus ring styles to icon-only buttons. For destructive actions, leverage Phoenix LiveView`s native `data-confirm` for built-in confirmation dialogs.
