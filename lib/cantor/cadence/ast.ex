@@ -41,12 +41,13 @@ defmodule Cantor.Cadence.AST do
   end
 
   def literal(value, line) do
-    data_type = case value do
-      v when is_integer(v) -> :integer
-      v when is_float(v) -> :float
-      v when is_binary(v) -> :string
-      v when is_atom(v) -> :atom
-    end
+    data_type =
+      case value do
+        v when is_integer(v) -> :integer
+        v when is_float(v) -> :float
+        v when is_binary(v) -> :string
+        v when is_atom(v) -> :atom
+      end
 
     %{
       type: :literal,
