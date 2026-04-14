@@ -1,0 +1,6 @@
+{
+  "import": [
+    "zpc/cantor/core",
+    "zpc/cantor/graph"
+  ]
+}

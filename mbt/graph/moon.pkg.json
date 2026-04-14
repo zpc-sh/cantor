@@ -1,0 +1,9 @@
+{
+  "import": [
+    "zpc/cantor/core",
+    "zpc/cantor/nodes/audio",
+    "zpc/cantor/nodes/video",
+    "zpc/cantor/nodes/ai",
+    "zpc/cantor/nodes/io"
+  ]
+}
