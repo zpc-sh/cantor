@@ -1,0 +1,15 @@
+{
+  "name": "zpc/cantor",
+  "version": "0.1.0",
+  "deps": {},
+  "packages": [
+    "core",
+    "nodes/audio",
+    "nodes/video",
+    "nodes/ai",
+    "nodes/seq",
+    "nodes/io",
+    "graph",
+    "compiler"
+  ]
+}
