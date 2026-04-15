@@ -25,6 +25,7 @@ func tickCmd() tea.Cmd {
 		return tickMsg(t)
 	})
 }
+
 type tickMsg time.Time
 
 func (m model) Init() tea.Cmd {
@@ -60,8 +61,14 @@ func (m model) View() string {
 		Align(lipgloss.Center)
 
 	// Draw an ASCII "spectral" display
-	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n", m.ticks)
-	content += "|||||:::||::::::::::||:::::|::::::||||" // placeholder visualizer
+	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n\n", m.ticks)
+	content += "|||||:::||::::::::::||:::::|::::::||||\n\n" // placeholder visualizer
+
+	helpStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.Color("#E0E0E0")).
+		Italic(true)
+
+	content += helpStyle.Render("Press 'q' or 'ctrl+c' to quit")
 
 	return style.Render(content)
 }
