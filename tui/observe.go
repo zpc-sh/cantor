@@ -23,7 +23,7 @@ func (o *MemoryObserver) ObserveBuffer(offset uint32, length uint32) ([]float64,
 	if !ok {
 		return nil, nil // Out of bounds or uninitialized
 	}
-	
+
 	// Convert bytes to floats (Assume little endian)
 	// (Stubbed conversion for observation loop)
 	_ = bytes
