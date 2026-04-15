@@ -1,0 +1,3 @@
+## 2025-02-12 - Phoenix LiveView Built-in Confirmation Dialog
+**Learning:** Phoenix LiveView provides native, built-in support for confirmation dialogs via the `data-confirm` attribute on interactive elements (like `button`s with `phx-click`). This makes it extremely easy to add safety to destructive actions without needing to write custom JavaScript or modal logic.
+**Action:** Always prefer using `data-confirm` for simple destructive actions in LiveView applications instead of building custom modals or writing raw JS, as it integrates perfectly with the existing event lifecycle and requires zero additional CSS/JS footprint.
