@@ -1,0 +1,3 @@
+## 2024-05-24 - Interactive Components Require Explicit Keyboard Hints
+**Learning:** When developing Terminal User Interfaces (TUIs), specifically the Cantor TUI in Go using bubbletea, it is critical to provide explicit visual hints for keyboard shortcuts (e.g., "Press q or ctrl+c to quit"). Without these, users may feel trapped as they don't know the standard exit commands. This is a foundational accessibility requirement for CLI/TUI applications to ensure they are discoverable and navigable without prior knowledge.
+**Action:** Always include a clearly styled hint at the bottom of TUI views explaining how to exit or navigate, using `lipgloss` for styling.
