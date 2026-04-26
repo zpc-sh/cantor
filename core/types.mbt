@@ -2,7 +2,7 @@ pub(all) enum MediaType {
   Audio
   Video
   Muxed
-}
+} derive(Eq, Debug)
 
 pub(all) struct Stream {
   id : String
