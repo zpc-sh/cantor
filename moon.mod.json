@@ -10,6 +10,8 @@
     "nodes/seq",
     "nodes/io",
     "graph",
-    "compiler"
+    "compiler",
+    "field",
+    "library"
   ]
 }

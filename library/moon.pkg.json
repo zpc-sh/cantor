@@ -1,0 +1,6 @@
+{
+  "import": [
+    "zpc/cantor/field",
+    "zpc/cantor/core"
+  ]
+}
