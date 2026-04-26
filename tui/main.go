@@ -63,7 +63,16 @@ func (m model) View() string {
 	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n", m.ticks)
 	content += "|||||:::||::::::::::||:::::|::::::||||" // placeholder visualizer
 
-	return style.Render(content)
+	mainView := style.Render(content)
+
+	helpStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.Color("#767676")).
+		PaddingTop(1).
+		Width(m.width).
+		Align(lipgloss.Center)
+	helpView := helpStyle.Render("Press q or ctrl+c to quit")
+
+	return mainView + "\n" + helpView
 }
 
 func main() {
