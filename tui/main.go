@@ -59,9 +59,15 @@ func (m model) View() string {
 		Width(m.width).
 		Align(lipgloss.Center)
 
+	hintStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.Color("#A0A0A0")).
+		Italic(true).
+		MarginTop(1)
+
 	// Draw an ASCII "spectral" display
 	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n", m.ticks)
-	content += "|||||:::||::::::::::||:::::|::::::||||" // placeholder visualizer
+	content += "|||||:::||::::::::::||:::::|::::::||||\n" // placeholder visualizer
+	content += hintStyle.Render("Press q or ctrl+c to quit")
 
 	return style.Render(content)
 }
