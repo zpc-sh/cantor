@@ -61,7 +61,10 @@ func (m model) View() string {
 
 	// Draw an ASCII "spectral" display
 	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n", m.ticks)
-	content += "|||||:::||::::::::::||:::::|::::::||||" // placeholder visualizer
+	content += "|||||:::||::::::::::||:::::|::::::||||\n\n" // placeholder visualizer
+
+	helpStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("#A0A0A0")).Italic(true)
+	content += helpStyle.Render("Press q or ctrl+c to quit")
 
 	return style.Render(content)
 }
