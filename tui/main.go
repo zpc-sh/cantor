@@ -51,7 +51,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() string {
-	style := lipgloss.NewStyle().
+	mainStyle := lipgloss.NewStyle().
 		Bold(true).
 		Foreground(lipgloss.Color("#FAFAFA")).
 		Background(lipgloss.Color("#7D56F4")).
@@ -59,11 +59,19 @@ func (m model) View() string {
 		Width(m.width).
 		Align(lipgloss.Center)
 
+	helpStyle := lipgloss.NewStyle().
+		Foreground(lipgloss.Color("#767676")).
+		Align(lipgloss.Center).
+		PaddingTop(1)
+
 	// Draw an ASCII "spectral" display
 	content := fmt.Sprintf("CANTOR ACTUATION CONSOLE | Ticks: %d\n", m.ticks)
 	content += "|||||:::||::::::::::||:::::|::::::||||" // placeholder visualizer
 
-	return style.Render(content)
+	mainContent := mainStyle.Render(content)
+	helpContent := helpStyle.Render("Press q or ctrl+c to quit")
+
+	return lipgloss.JoinVertical(lipgloss.Center, mainContent, helpContent)
 }
 
 func main() {
